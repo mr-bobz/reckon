@@ -3,7 +3,6 @@
 This is a basic isomorphic app, built with react, node/express, ES6, webpack etc.
 
 ### Overview
-Reckon test:
 * test1 - divisble numbers by provided divisors within the lower and upper bounds
 * test2 - find all the occurrences of a particular set of characters in a string (without string/text APIs) and post the results back to another API
 
