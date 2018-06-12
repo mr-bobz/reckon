@@ -1,0 +1,47 @@
+{
+  "name": "reckon-sample",
+  "version": "1.0.0",
+  "description": "Simple ReactJS NodeJS App",
+  "main": "app/client/index.jsx",
+  "scripts": {
+    "babel": "node_modules/.bin/babel",
+    "nodemon": "node_modules/.bin/nodemon",
+    "parallelshell": "node_modules/.bin/parallelshell",
+    "build:server": "babel app/server -d build/server",
+    "build:watch:server": "babel app/server -d build/server --watch",
+    "build:client": "webpack --config webpack.prod.config.js/",
+    "build:watch:client": "webpack --config webpack.config.js/ --watch",
+    "build": "npm run build:server && npm run build:client",
+    "start": "npm run build && NODE_ENV=production node build/server/index.js",
+    "start:dev": "parallelshell 'npm run build:watch:server' 'npm run build:watch:client' 'nodemon build/server/index.js'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "chmod +x node_modules/.bin/*"
+  },
+  "keywords": [
+    "ReactJS",
+    "NodeJS"
+  ],
+  "author": "Bobby Joseph (bobbyj79@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "css-loader": "^0.28.11",
+    "express": "^4.16.3",
+    "flux": "^3.1.3",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "style-loader": "^0.21.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^1.17.4",
+    "parallelshell": "^3.0.2",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}
